@@ -52,7 +52,7 @@ export async function Footer({
   ].filter((s) => s.href);
 
   return (
-    <footer className="relative mt-24 overflow-hidden bg-gradient-to-b from-plum-950 to-primary-950 text-primary-100">
+    <footer className="relative mt-24 overflow-hidden bg-gradient-to-b from-plum-950 via-primary-950 to-plum-950 text-primary-100 noise-overlay">
       {/* Decorative petal glow */}
       <div
         className="pointer-events-none absolute -top-32 start-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-primary-500/20 blur-[110px]"

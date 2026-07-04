@@ -30,7 +30,7 @@ export default async function TreatmentsPage({
   return (
     <>
       <PageHero title={t("title")} subtitle={t("subtitle")} />
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <section className="section-mesh mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-28">
         <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
           {treatments.map((treatment, i) => (
             <TreatmentCard

@@ -100,7 +100,7 @@ export default async function LocaleLayout({
       data-scroll-behavior="smooth"
       className={`${inter.variable} ${cormorant.variable} ${plexArabic.variable}`}
     >
-      <body className="min-h-dvh flex flex-col antialiased">
+      <body className="min-h-dvh flex flex-col antialiased section-mesh">
         <NextIntlClientProvider>
           <Header settings={settings} />
           <main className="flex-1">{children}</main>

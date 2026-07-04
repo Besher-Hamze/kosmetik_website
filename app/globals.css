@@ -2,8 +2,6 @@
 @import "tw-animate-css";
 
 @theme {
-  /* Brand palette — derived from the Karmen Kosmetik logo
-     (magenta→plum petal gradient + charcoal wordmark + gold accent) */
   --color-primary-50: #fdf2f8;
   --color-primary-100: #fbe3f0;
   --color-primary-200: #f9c7e2;
@@ -67,10 +65,14 @@
   --shadow-soft: 0 2px 20px -2px rgb(69 5 31 / 0.08);
   --shadow-lift: 0 12px 40px -8px rgb(69 5 31 / 0.16);
   --shadow-glow: 0 0 40px -4px rgb(221 58 136 / 0.35);
+  --shadow-gold: 0 0 32px -6px rgb(196 162 102 / 0.45);
 
   --animate-float: float 7s ease-in-out infinite;
   --animate-float-slow: float 11s ease-in-out infinite;
   --animate-marquee: marquee 36s linear infinite;
+  --animate-shimmer: shimmer 2.8s ease-in-out infinite;
+  --animate-ken-burns: ken-burns 18s ease-out infinite alternate;
+  --animate-glow-pulse: glow-pulse 4s ease-in-out infinite;
 
   @keyframes float {
     0%,
@@ -90,16 +92,39 @@
       transform: translateX(-50%);
     }
   }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% center;
+    }
+    100% {
+      background-position: -200% center;
+    }
+  }
+
+  @keyframes ken-burns {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.08);
+    }
+  }
+
+  @keyframes glow-pulse {
+    0%,
+    100% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 0.75;
+    }
+  }
 }
 
 :root {
   --background: var(--color-cream);
   --foreground: #2b1a24;
-}
-
-.dark {
-  --background: #1a1016;
-  --foreground: #f5eaf0;
 }
 
 html {
@@ -114,7 +139,6 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Arabic gets the Arabic family for everything, incl. display headings */
 [dir="rtl"] body,
 html[lang="ar"] body {
   font-family: var(--font-arabic);
@@ -134,13 +158,11 @@ html[lang="ar"] .font-display {
   color: var(--color-primary-950);
 }
 
-/* Elegant thin scrollbar */
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--color-primary-300) transparent;
 }
 
-/* Focus ring for a11y */
 :focus-visible {
   outline: 2px solid var(--color-primary-500);
   outline-offset: 3px;
@@ -158,22 +180,168 @@ html[lang="ar"] .font-display {
   }
 }
 
-/* Utility: gradient brand text */
+/* ── Brand utilities ── */
+
 .text-gradient {
   background: linear-gradient(
     120deg,
-    var(--color-primary-600),
-    var(--color-plum-600) 55%,
-    var(--color-primary-500)
+    var(--color-primary-400),
+    var(--color-plum-300) 45%,
+    var(--color-gold-300)
   );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-/* Glassmorphism surface */
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--color-gold-300), var(--color-gold-500));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .glass {
   background: rgb(253 250 247 / 0.72);
   backdrop-filter: blur(16px) saturate(1.4);
   -webkit-backdrop-filter: blur(16px) saturate(1.4);
+}
+
+.glass-dark {
+  background: rgb(51 19 53 / 0.55);
+  backdrop-filter: blur(20px) saturate(1.5);
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+}
+
+/* Subtle film grain overlay */
+.noise-overlay::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 128px 128px;
+}
+
+/* Luxury card with gradient border on hover */
+.luxury-card {
+  position: relative;
+  border-radius: 1.5rem;
+  background: white;
+  transition: transform 0.5s cubic-bezier(0.21, 0.65, 0.32, 0.99),
+    box-shadow 0.5s ease;
+}
+
+.luxury-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgb(221 58 136 / 0.25),
+    rgb(196 162 102 / 0.35),
+    rgb(141 67 153 / 0.2)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.luxury-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lift);
+}
+
+.luxury-card:hover::before {
+  opacity: 1;
+}
+
+/* Decorative gold rule */
+.gold-rule {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.gold-rule::before,
+.gold-rule::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-gold-400),
+    transparent
+  );
+}
+
+/* Section ambient mesh background */
+.section-mesh {
+  background:
+    radial-gradient(ellipse 80% 60% at 10% 0%, rgb(221 58 136 / 0.06), transparent),
+    radial-gradient(ellipse 60% 50% at 90% 100%, rgb(141 67 153 / 0.05), transparent),
+    var(--color-cream);
+}
+
+.section-mesh-blush {
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgb(245 156 202 / 0.12), transparent),
+    var(--color-blush);
+}
+
+/* Shimmer CTA border */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgb(255 255 255 / 0.25) 50%,
+    transparent 60%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Editorial image frame */
+.editorial-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.75rem;
+  box-shadow: var(--shadow-lift);
+}
+
+.editorial-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  border: 1px solid rgb(255 255 255 / 0.2);
+  pointer-events: none;
+}
+
+.editorial-frame::after {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  z-index: 2;
+  border-radius: calc(1.75rem - 12px);
+  border: 1px solid rgb(196 162 102 / 0.35);
+  pointer-events: none;
 }

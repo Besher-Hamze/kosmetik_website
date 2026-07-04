@@ -53,8 +53,8 @@ export function Header({ settings }: { settings: Settings }) {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500",
         solid
-          ? "bg-white/95 shadow-soft border-b border-primary-100/60 backdrop-blur-xl"
-          : "bg-gradient-to-b from-plum-950/60 to-transparent",
+          ? "bg-white/90 shadow-soft border-b border-primary-100/50 backdrop-blur-2xl"
+          : "bg-gradient-to-b from-plum-950/50 via-plum-950/20 to-transparent backdrop-blur-[2px]",
       )}
     >
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
@@ -151,7 +151,7 @@ export function Header({ settings }: { settings: Settings }) {
 
           <Link
             href="/termin"
-            className="hidden h-10 items-center gap-2 rounded-full bg-gradient-to-r from-primary-600 to-plum-700 px-5 text-sm font-semibold text-white shadow-soft transition hover:shadow-glow sm:inline-flex"
+            className="hidden h-10 items-center gap-2 rounded-full bg-gradient-to-r from-primary-600 to-plum-700 px-5 text-sm font-semibold text-white shadow-soft ring-1 ring-white/10 transition hover:shadow-glow sm:inline-flex"
           >
             <CalendarCheck className="h-4 w-4" aria-hidden />
             {t("booking")}

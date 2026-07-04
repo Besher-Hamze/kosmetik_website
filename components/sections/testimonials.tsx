@@ -7,13 +7,20 @@ import type { Testimonial } from "@/lib/types";
 
 function TestimonialCard({ item, locale }: { item: Testimonial; locale: string }) {
   return (
-    <figure className="flex w-[320px] shrink-0 flex-col gap-4 rounded-3xl bg-white p-7 shadow-soft ring-1 ring-primary-100/70 sm:w-[380px]">
-      <Quote className="h-7 w-7 text-primary-200" aria-hidden />
-      <blockquote className="flex-1 text-sm leading-relaxed text-ink-700">
-        {loc(item.text, locale)}
+    <figure className="relative flex w-[320px] shrink-0 flex-col gap-5 overflow-hidden rounded-3xl bg-white p-8 shadow-soft ring-1 ring-primary-100/60 sm:w-[400px]">
+      <div
+        className="pointer-events-none absolute -end-8 -top-8 h-32 w-32 rounded-full bg-primary-100/60 blur-2xl"
+        aria-hidden
+      />
+      <Quote className="relative h-8 w-8 text-primary-300" aria-hidden />
+      <blockquote className="relative flex-1 text-[15px] leading-relaxed text-ink-700">
+        &ldquo;{loc(item.text, locale)}&rdquo;
       </blockquote>
-      <figcaption className="flex items-center justify-between border-t border-primary-50 pt-4">
-        <span className="text-sm font-semibold text-ink-950">{item.name}</span>
+      <figcaption className="relative flex items-center justify-between border-t border-primary-100 pt-5">
+        <div>
+          <span className="block text-sm font-bold text-ink-950">{item.name}</span>
+          <span className="mt-0.5 text-xs text-ink-400">Kundin</span>
+        </div>
         <span className="flex gap-0.5" aria-label={`${item.rating}/5`}>
           {Array.from({ length: 5 }).map((_, i) => (
             <Star
@@ -36,19 +43,18 @@ export function TestimonialsMarquee({ items }: { items: Testimonial[] }) {
   const locale = useLocale();
   if (items.length === 0) return null;
 
-  // Duplicate for a seamless loop
   const doubled = [...items, ...items];
 
   return (
     <div
-      className="group relative overflow-hidden"
+      className="group relative overflow-hidden py-2"
       style={{
         maskImage:
-          "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+          "linear-gradient(to right, transparent, black 6%, black 94%, transparent)",
       }}
       dir="ltr"
     >
-      <div className="flex w-max gap-6 py-2 motion-safe:animate-marquee group-hover:[animation-play-state:paused]">
+      <div className="flex w-max gap-6 motion-safe:animate-marquee group-hover:[animation-play-state:paused]">
         {doubled.map((item, i) => (
           <div key={i} dir={locale === "ar" ? "rtl" : "ltr"}>
             <TestimonialCard item={item} locale={locale} />
