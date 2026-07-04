@@ -1,0 +1,192 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "treatments": "Behandlungen",
+    "courses": "Kurse",
+    "about": "Über uns",
+    "gallery": "Galerie",
+    "faq": "FAQ",
+    "contact": "Kontakt",
+    "booking": "Termin buchen",
+    "certificate": "Zertifikat prüfen",
+    "menu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "switchLocale": "العربية"
+  },
+  "hero": {
+    "badge": "Kosmetik & Akademie in Ludwigsburg",
+    "titleLine1": "Schönheit trifft",
+    "titleLine2": "Professionalität",
+    "cta": "Termin buchen",
+    "ctaSecondary": "Kurse entdecken",
+    "scroll": "Entdecken"
+  },
+  "home": {
+    "treatmentsTitle": "Unsere Behandlungen",
+    "treatmentsSubtitle": "Moderne kosmetische Behandlungen – individuell auf Ihre Haut abgestimmt.",
+    "allTreatments": "Alle Behandlungen ansehen",
+    "coursesTitle": "Fortbildungskurse in Fachkosmetik",
+    "coursesSubtitle": "Praxisorientierte Schulungen auf Deutsch und Arabisch – von der Grundausbildung bis zum Profi-Kurs.",
+    "allCourses": "Alle Kurse ansehen",
+    "whyTitle": "Warum Karmen Kosmetik Akademie?",
+    "whySubtitle": "Qualität, Hygiene und persönliche Betreuung stehen bei uns an erster Stelle.",
+    "statsYears": "Gegründet",
+    "statsTreatments": "Behandlungen",
+    "statsCourses": "Kurse & Schulungen",
+    "statsLanguages": "Unterrichtssprachen",
+    "testimonialsTitle": "Das sagen unsere Kundinnen",
+    "testimonialsSubtitle": "Vertrauen, das durch Ergebnisse entsteht.",
+    "faqTitle": "Häufige Fragen",
+    "faqSubtitle": "Antworten auf die wichtigsten Fragen rund um Behandlungen und Kurse.",
+    "allFaq": "Alle Fragen ansehen",
+    "ctaTitle": "Bereit für Ihren Termin?",
+    "ctaText": "Buchen Sie jetzt Ihre Behandlung oder Ihren Kurs – wir freuen uns auf Sie.",
+    "ctaButton": "Jetzt Termin buchen",
+    "ctaWhatsapp": "WhatsApp schreiben",
+    "galleryTitle": "Einblicke in unsere Akademie",
+    "gallerySubtitle": "Moderne Räume, kleine Gruppen, praxisnahes Lernen."
+  },
+  "treatments": {
+    "title": "Behandlungen",
+    "subtitle": "Moderne kosmetische Behandlungen mit höchsten Qualitäts- und Hygienestandards.",
+    "benefits": "Ihre Vorteile",
+    "bookThis": "Behandlung buchen",
+    "more": "Mehr erfahren",
+    "otherTreatments": "Weitere Behandlungen",
+    "gallery": "Einblicke & Bilder",
+    "galleryHint": "Klicken Sie auf ein Bild, um es zu vergrößern.",
+    "beforeAfter": "Vorher & Nachher",
+    "before": "Vorher",
+    "after": "Nachher",
+    "previous": "Vorherige Behandlung",
+    "next": "Nächste Behandlung"
+  },
+  "courses": {
+    "title": "Fortbildungskurse in Fachkosmetik",
+    "subtitle": "Theorie und Praxis in deutscher und arabischer Sprache – mit Zertifikat.",
+    "duration": "Dauer",
+    "schedule": "Termin",
+    "price": "Preis",
+    "priceFrom": "Ab {price} €",
+    "priceOnRequest": "Auf Anfrage",
+    "curriculum": "Kursinhalte",
+    "certificate": "Abschluss",
+    "audience": "Zielgruppe",
+    "bookThis": "Kurs anfragen",
+    "more": "Details ansehen",
+    "otherCourses": "Weitere Kurse",
+    "completeCourseTitle": "Fachkosmetik-Komplettkurs",
+    "singleCoursesTitle": "Einzelkurse",
+    "availableCourses": "Unsere Kurse"
+  },
+  "about": {
+    "title": "Über uns",
+    "subtitle": "Karmen Kosmetik Akademie – seit 2023 Ihr Zentrum für Kosmetik, Hautpflege und professionelle Schulungen."
+  },
+  "gallery": {
+    "title": "Galerie",
+    "subtitle": "Einblicke in unsere Akademie und unsere Arbeit."
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "subtitle": "Alles Wichtige rund um Behandlungen, Kurse und Termine."
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Wir sind für Sie da – schreiben Sie uns oder rufen Sie an.",
+    "name": "Name",
+    "email": "E-Mail",
+    "phone": "Telefon (optional)",
+    "subject": "Betreff (optional)",
+    "message": "Ihre Nachricht",
+    "send": "Nachricht senden",
+    "sending": "Wird gesendet…",
+    "success": "Vielen Dank! Ihre Nachricht wurde gesendet. Wir melden uns so schnell wie möglich.",
+    "error": "Leider ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns per WhatsApp.",
+    "addressTitle": "Adresse",
+    "phoneTitle": "Telefon & WhatsApp",
+    "emailTitle": "E-Mail",
+    "hoursTitle": "Öffnungszeiten",
+    "validation": {
+      "nameRequired": "Bitte geben Sie Ihren Namen ein.",
+      "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "messageRequired": "Bitte geben Sie eine Nachricht ein (mind. 10 Zeichen)."
+    }
+  },
+  "booking": {
+    "title": "Termin buchen",
+    "subtitle": "Wählen Sie Behandlung oder Kurs und Ihren Wunschtermin – wir bestätigen schnellstmöglich.",
+    "typeLabel": "Was möchten Sie buchen?",
+    "typeTreatment": "Behandlung",
+    "typeCourse": "Kurs",
+    "serviceLabel": "Behandlung / Kurs auswählen",
+    "servicePlaceholder": "Bitte auswählen",
+    "name": "Name",
+    "phone": "Telefonnummer",
+    "email": "E-Mail (optional)",
+    "date": "Wunschdatum",
+    "time": "Wunschuhrzeit (optional)",
+    "notes": "Anmerkungen (optional)",
+    "submit": "Termin anfragen",
+    "sending": "Wird gesendet…",
+    "success": "Vielen Dank! Ihre Terminanfrage ist eingegangen. Wir bestätigen Ihren Termin schnellstmöglich per Telefon oder WhatsApp.",
+    "error": "Leider ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns per WhatsApp.",
+    "validation": {
+      "nameRequired": "Bitte geben Sie Ihren Namen ein.",
+      "phoneRequired": "Bitte geben Sie Ihre Telefonnummer ein.",
+      "serviceRequired": "Bitte wählen Sie eine Behandlung oder einen Kurs.",
+      "dateRequired": "Bitte wählen Sie ein Datum.",
+      "dateInPast": "Das Datum darf nicht in der Vergangenheit liegen."
+    }
+  },
+  "certificate": {
+    "title": "Zertifikat prüfen",
+    "subtitle": "Geben Sie den Zertifikatscode ein, um die Echtheit zu überprüfen.",
+    "codeLabel": "Zertifikatscode",
+    "codePlaceholder": "z. B. KK-2026-ABC12",
+    "check": "Prüfen",
+    "checking": "Wird geprüft…",
+    "validTitle": "Zertifikat gültig",
+    "invalidTitle": "Zertifikat nicht gefunden",
+    "invalidText": "Für diesen Code wurde kein gültiges Zertifikat gefunden. Bitte überprüfen Sie die Eingabe.",
+    "student": "Name",
+    "course": "Kurs",
+    "issueDate": "Ausgestellt am"
+  },
+  "footer": {
+    "quickMenu": "Schnelles Menü",
+    "legal": "Rechtliche Informationen",
+    "contact": "Kontakt",
+    "follow": "Folgen Sie uns",
+    "rights": "Alle Rechte vorbehalten.",
+    "madeWith": "Kosmetik & Akademie in Ludwigsburg"
+  },
+  "common": {
+    "loading": "Wird geladen…",
+    "backHome": "Zur Startseite",
+    "notFoundTitle": "Seite nicht gefunden",
+    "notFoundText": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+    "whatsapp": "WhatsApp",
+    "readMore": "Mehr erfahren"
+  },
+  "meta": {
+    "home": {
+      "title": "Karmen Kosmetik Akademie | Kosmetik & Schulungen in Ludwigsburg",
+      "description": "Moderne kosmetische Behandlungen und professionelle Fachkosmetik-Schulungen auf Deutsch und Arabisch in Ludwigsburg. Jetzt Termin buchen!"
+    },
+    "treatments": {
+      "title": "Behandlungen",
+      "description": "Microneedling, Permanent Make-up, HydraFacial, Laser-Haarentfernung und mehr – moderne Kosmetikbehandlungen in Ludwigsburg."
+    },
+    "courses": {
+      "title": "Fortbildungskurse in Fachkosmetik",
+      "description": "Praxisorientierte Kosmetik-Schulungen mit Zertifikat – auf Deutsch und Arabisch. Fachkosmetik, Permanent Make-Up, Microneedling und mehr."
+    },
+    "about": { "title": "Über uns", "description": "Karmen Kosmetik Akademie – seit 2023 Ihr Zentrum für Kosmetik, Hautpflege und professionelle Schulungen in Ludwigsburg." },
+    "gallery": { "title": "Galerie", "description": "Einblicke in die Karmen Kosmetik Akademie in Ludwigsburg." },
+    "faq": { "title": "FAQ", "description": "Häufig gestellte Fragen zu Behandlungen, Kursen, Terminen und Zertifikaten." },
+    "contact": { "title": "Kontakt", "description": "Kontaktieren Sie die Karmen Kosmetik Akademie in Ludwigsburg – per Formular, E-Mail oder WhatsApp." },
+    "booking": { "title": "Termin buchen", "description": "Buchen Sie online Ihren Termin für Behandlungen oder Kurse bei Karmen Kosmetik Akademie." },
+    "certificate": { "title": "Zertifikat prüfen", "description": "Überprüfen Sie die Echtheit eines Zertifikats der Karmen Kosmetik Akademie." }
+  }
+}

@@ -1,26 +1,179 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  /* Brand palette — derived from the Karmen Kosmetik logo
+     (magenta→plum petal gradient + charcoal wordmark + gold accent) */
+  --color-primary-50: #fdf2f8;
+  --color-primary-100: #fbe3f0;
+  --color-primary-200: #f9c7e2;
+  --color-primary-300: #f59cca;
+  --color-primary-400: #ec64a8;
+  --color-primary-500: #dd3a88;
+  --color-primary-600: #c21e68;
+  --color-primary-700: #a3134f;
+  --color-primary-800: #871343;
+  --color-primary-900: #71153b;
+  --color-primary-950: #45051f;
+
+  --color-plum-50: #faf5fb;
+  --color-plum-100: #f4eaf6;
+  --color-plum-200: #ead5ee;
+  --color-plum-300: #dab4e0;
+  --color-plum-400: #c489ce;
+  --color-plum-500: #a95fb6;
+  --color-plum-600: #8d4399;
+  --color-plum-700: #75367e;
+  --color-plum-800: #612e67;
+  --color-plum-900: #522a56;
+  --color-plum-950: #331335;
+
+  --color-gold-50: #faf7f0;
+  --color-gold-100: #f2ecdb;
+  --color-gold-200: #e4d6b6;
+  --color-gold-300: #d3bb89;
+  --color-gold-400: #c4a266;
+  --color-gold-500: #b08d57;
+  --color-gold-600: #9a7444;
+  --color-gold-700: #7c5b39;
+  --color-gold-800: #664b33;
+  --color-gold-900: #553f2d;
+
+  --color-ink-50: #f6f6f6;
+  --color-ink-100: #e7e7e7;
+  --color-ink-200: #d1d1d1;
+  --color-ink-300: #b0b0b0;
+  --color-ink-400: #888888;
+  --color-ink-500: #6d6d6d;
+  --color-ink-600: #5d5d5d;
+  --color-ink-700: #4f4f4f;
+  --color-ink-800: #454545;
+  --color-ink-900: #3d3d3d;
+  --color-ink-950: #262626;
+
+  --color-cream: #fdfaf7;
+  --color-blush: #fdf6fa;
+
+  --color-success: #16a34a;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+
+  --font-sans: var(--font-inter), var(--font-arabic), ui-sans-serif, system-ui,
+    sans-serif;
+  --font-display: var(--font-cormorant), var(--font-arabic), ui-serif, Georgia,
+    serif;
+  --font-arabic: var(--font-plex-arabic), ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-soft: 0 2px 20px -2px rgb(69 5 31 / 0.08);
+  --shadow-lift: 0 12px 40px -8px rgb(69 5 31 / 0.16);
+  --shadow-glow: 0 0 40px -4px rgb(221 58 136 / 0.35);
+
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-float-slow: float 11s ease-in-out infinite;
+  --animate-marquee: marquee 36s linear infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-18px) rotate(2deg);
+    }
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--color-cream);
+  --foreground: #2b1a24;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --background: #1a1016;
+  --foreground: #f5eaf0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Arabic gets the Arabic family for everything, incl. display headings */
+[dir="rtl"] body,
+html[lang="ar"] body {
+  font-family: var(--font-arabic);
+}
+
+html[lang="ar"] .font-display {
+  font-family: var(--font-arabic);
+  letter-spacing: 0;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+::selection {
+  background: var(--color-primary-200);
+  color: var(--color-primary-950);
+}
+
+/* Elegant thin scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary-300) transparent;
+}
+
+/* Focus ring for a11y */
+:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utility: gradient brand text */
+.text-gradient {
+  background: linear-gradient(
+    120deg,
+    var(--color-primary-600),
+    var(--color-plum-600) 55%,
+    var(--color-primary-500)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Glassmorphism surface */
+.glass {
+  background: rgb(253 250 247 / 0.72);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
 }
