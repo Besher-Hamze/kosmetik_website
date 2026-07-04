@@ -28,7 +28,7 @@ export function BeforeAfterGallery({
                 fill
                 sizes="(max-width: 640px) 100vw, 50vw"
                 className="object-cover"
-                unoptimized={pair.before.startsWith("/uploads")}
+                unoptimized
               />
               <span className="absolute start-3 top-3 rounded-full bg-plum-950/70 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white backdrop-blur-sm">
                 {beforeLabel}
@@ -41,7 +41,7 @@ export function BeforeAfterGallery({
                 fill
                 sizes="(max-width: 640px) 100vw, 50vw"
                 className="object-cover"
-                unoptimized={pair.after.startsWith("/uploads")}
+                unoptimized
               />
               <span className="absolute start-3 top-3 rounded-full bg-brand-600/90 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white backdrop-blur-sm">
                 {afterLabel}

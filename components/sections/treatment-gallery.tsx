@@ -55,7 +55,7 @@ export function TreatmentGallery({
                 fill
                 sizes="(max-width: 640px) 100vw, 50vw"
                 className="object-cover transition duration-500 group-hover:scale-105"
-                unoptimized={img.src.startsWith("/uploads")}
+                unoptimized
               />
               <div className="absolute inset-0 bg-gradient-to-t from-plum-950/60 via-transparent to-transparent opacity-0 transition group-hover:opacity-100" />
               <span className="absolute bottom-3 end-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ink-800 opacity-0 shadow-soft transition group-hover:opacity-100">

@@ -192,6 +192,7 @@ export default async function TreatmentDetailPage({
           priority
           sizes="100vw"
           className="object-cover"
+          unoptimized
         />
         <div className="absolute inset-0 bg-gradient-to-t from-plum-950/95 via-plum-950/50 to-plum-950/35" />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-12 pt-36 sm:px-6 lg:px-8">

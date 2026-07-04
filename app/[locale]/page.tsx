@@ -224,6 +224,7 @@ export default async function HomePage({
                       fill
                       sizes="(max-width: 640px) 100vw, 33vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      unoptimized
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-plum-950/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   </Link>

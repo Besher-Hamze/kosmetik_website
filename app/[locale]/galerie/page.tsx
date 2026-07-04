@@ -48,6 +48,7 @@ export default async function GalleryPage({
                       width={800}
                       height={900}
                       className="h-auto w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                      unoptimized
                     />
                     <figcaption className="absolute inset-x-0 bottom-0 translate-y-full bg-gradient-to-t from-plum-950/85 to-transparent p-5 pt-10 text-sm font-medium text-white transition-transform duration-500 group-hover:translate-y-0">
                       {loc(img.alt, locale)}

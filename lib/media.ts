@@ -1,11 +1,39 @@
-const API_ORIGIN =
+const API_ORIGIN = (
   process.env.NEXT_PUBLIC_API_URL ??
   process.env.API_URL ??
-  "http://localhost:4000";
+  "http://localhost:4000"
+).replace(/\/$/, "");
 
-/** Prefix relative /uploads paths with the API origin; keep others as-is. */
+/**
+ * Resolve any API media path to the backend origin.
+ * All content images must be served from the API `/uploads` folder.
+ */
 export function mediaUrl(src: string | undefined | null): string {
   if (!src) return "";
-  if (src.startsWith("/uploads/")) return `${API_ORIGIN}${src}`;
-  return src;
+
+  if (/^https?:\/\//i.test(src)) return src;
+
+  let path = src.startsWith("/") ? src : `/${src}`;
+
+  // Legacy `/media/...` (e.g. old public folder paths) → backend uploads
+  if (path.startsWith("/media/")) {
+    path = `/uploads${path}`;
+  } else if (!path.startsWith("/uploads/")) {
+    path = `/uploads/media${path}`;
+  }
+
+  return `${API_ORIGIN}${path}`;
 }
+
+/** True when the src should be loaded from the backend (not Next.js /public). */
+export function isBackendMedia(src: string | undefined | null): boolean {
+  if (!src) return false;
+  if (/^https?:\/\//i.test(src)) return src.startsWith(API_ORIGIN);
+  return (
+    src.startsWith("/uploads/") ||
+    src.startsWith("/media/") ||
+    !src.startsWith("/logo") // relative content paths
+  );
+}
+
+export { API_ORIGIN };

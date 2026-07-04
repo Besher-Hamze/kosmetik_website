@@ -59,6 +59,7 @@ export default async function AboutPage({
                   width={900}
                   height={800}
                   className="h-auto w-full object-cover"
+                  unoptimized
                 />
                 <div className="absolute inset-0 ring-1 ring-inset ring-plum-950/10" />
               </div>
