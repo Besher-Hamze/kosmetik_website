@@ -3,7 +3,7 @@ module.exports = {
     {
       name: "kosmetik-website",
       script: "node_modules/next/dist/bin/next",
-      args: "start -p 3021 -H 0.0.0.0",
+      args: "start -p 3021 -H 127.0.0.1",
       cwd: __dirname,
       instances: 1,
       exec_mode: "fork",
