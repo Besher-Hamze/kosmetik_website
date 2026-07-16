@@ -6,28 +6,42 @@ const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 function backendImagePatterns(): NonNullable<
   NextConfig["images"]
 >["remotePatterns"] {
-  const raw =
-    process.env.NEXT_PUBLIC_API_URL ??
-    process.env.API_URL ??
-    "http://localhost:4000";
+  const origins = [
+    process.env.NEXT_PUBLIC_ASSET_URL,
+    process.env.NEXT_PUBLIC_API_URL,
+    process.env.API_URL,
+    "http://localhost:4000",
+  ].filter(Boolean) as string[];
 
-  try {
-    const url = new URL(raw);
-    const protocol = url.protocol.replace(":", "") as "http" | "https";
-    return [
-      {
+  const patterns: NonNullable<NextConfig["images"]>["remotePatterns"] = [];
+  const seen = new Set<string>();
+
+  for (const raw of origins) {
+    try {
+      const url = new URL(raw);
+      const key = `${url.protocol}//${url.host}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      const protocol = url.protocol.replace(":", "") as "http" | "https";
+      patterns.push({
         protocol,
         hostname: url.hostname,
         ...(url.port ? { port: url.port } : {}),
         pathname: "/uploads/**",
-      },
-    ];
-  } catch {
+      });
+    } catch {
+      /* skip invalid */
+    }
+  }
+
+  if (patterns.length === 0) {
     return [
       { protocol: "http", hostname: "localhost", port: "4000", pathname: "/uploads/**" },
       { protocol: "http", hostname: "127.0.0.1", port: "4000", pathname: "/uploads/**" },
     ];
   }
+
+  return patterns;
 }
 
 const nextConfig: NextConfig = {

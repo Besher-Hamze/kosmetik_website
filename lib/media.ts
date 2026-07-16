@@ -1,12 +1,14 @@
+/** Backend origin that serves `/uploads/...` (prefer dedicated asset URL). */
 const API_ORIGIN = (
+  process.env.NEXT_PUBLIC_ASSET_URL ??
   process.env.NEXT_PUBLIC_API_URL ??
   process.env.API_URL ??
   "http://localhost:4000"
 ).replace(/\/$/, "");
 
 /**
- * Resolve any API media path to the backend origin.
- * All content images must be served from the API `/uploads` folder.
+ * Resolve any API media path to the backend uploads folder.
+ * DB paths → https://api…/uploads/media/...
  */
 export function mediaUrl(src: string | undefined | null): string {
   if (!src) return "";
